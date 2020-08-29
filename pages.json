@@ -1,0 +1,237 @@
+{
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabbar/tabbar-1/tabbar-1",
+			// "style": {
+			// 	"titleNView":false//不显示导航栏
+			// 	"navigationBarTitleText": "uni-app",//单独设置导航栏的文字
+			// },
+			"style": {
+				"navigationBarTitleText": "导航栏带搜索框",
+				"app-plus": {
+					"titleNView": {
+						// "type": "transparent",//透明
+						"titleColor": "#fff",
+						"backgroundColor": "#fff",
+						"buttons": [{
+							"fontSrc": "/static/uni.ttf",
+							"text": "\ue100",
+							"width": "30px",
+							"fontSize": "30px",
+							"color": "#ccc",
+							"background": "#ccc"
+						}],
+						"searchInput": {
+							"backgroundColor": "#eee",
+							"borderRadius": "6px",
+							"placeholder": "点击搜索",
+							"disabled": true
+						}
+					}
+				}
+			}
+		},
+		{
+			"path":"pages/tabbar/tabbar-2/tabbar-2",
+			"style": {
+				// "enablePullDownRefresh":true,//下来刷新
+				"navigationBarTitleText":"全国朋友圈",
+				"app-plus": {"titleNView":
+							{"buttons": [{
+											"text":"发布","fontSize":"16px","width":"50px","color":"#007AFF"
+										}]
+							}
+						}
+			}
+		},
+		
+		{
+			"path": "pages/tabbar/tabbar-3/tabbar-3",
+			"style": {
+				// "titleNView":false//不显示导航栏
+				"app-plus": {"titleNView":
+							{"buttons": [{
+											"text":"添加","fontSize":"16px","width":"50px","color":"#007AFF"
+										}]
+							}
+						}
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/tabbar-4",
+			"style": {
+				// "titleNView":false//不显示导航栏
+				"navigationBarTitleText": "互帮互助"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-5/tabbar-5",
+			"style": {
+				// "titleNView":false//不显示导航栏
+				"navigationBarTitleText": "开发者中心"
+			}
+		},
+		{
+            "path" : "pages/mainPage/allCounty/main",
+            "style" : {
+				"navigationBarTitleText": "全县资源"//单独设置导航栏的文字
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/allCounty/countyDetail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/allCounty/storeDetail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tab2/helpDetail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tab2/release",
+            "style" : {
+				"navigationBarTitleText": "发布消息"//单独设置导航栏的文字
+				
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/beautifyPlace/main",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/car/main",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/junge/main",
+            "style" : {
+				"navigationBarTitleText": "俊哥精心整理的资源"//单独设置导航栏的文字
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/guangyun/main",
+            "style" : {
+				"navigationBarTitleText": "广云设计的找不同"//单独设置导航栏的文字
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/junge/detailList",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/junge/detail",
+            "style" : {
+				"navigationBarTitleText": "web-view"
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/mySchedule/main",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/guangyun/one",
+            "style" : {
+				"titleNView": false //不显示导航栏
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/guangyun/two",
+            "style" : {
+				"titleNView": false //不显示导航栏
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/guangyun/three",
+            "style" : {
+				"titleNView": false //不显示导航栏
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/guangyun/four",
+            "style" : {
+				"titleNView": false //不显示导航栏
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/guangyun/five",
+            "style" : {
+				"titleNView": false //不显示导航栏
+			}
+        }
+        ,{
+            "path" : "pages/mainPage/addResource/add",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-3/webView",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/wangyou",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/admin",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-3/add",
+            "style" : {
+				
+			}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/login",
+            "style" : {
+				"navigationBarTitleText": "个人中心"//单独设置导航栏的文字
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "飞龙资源",//整体设置导航栏的文字
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"color": "#8F8F94",
+		"selectedColor": "#1296db",
+		"list": [{
+				"pagePath": "pages/tabbar/tabbar-1/tabbar-1",
+				"iconPath": "static/tab/tab1_0.png",
+				"selectedIconPath": "static/tab/tab1_1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
+				"iconPath": "static/tab/tab2_0.png",
+				"selectedIconPath": "static/tab/tab2_1.png",
+				"text": "朋友圈"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
+				
+				"iconPath": "static/tab/tab4_0.png",
+				"selectedIconPath": "static/tab/tab4_1.png",
+				"text": "好消息"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
+				"iconPath": "static/tab/tab3_0.png",
+				"selectedIconPath": "static/tab/tab3_1.png",
+				"text": "互帮互助"
+			},
+			{
+				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
+				"iconPath": "static/tab/tab5_0.png",
+				"selectedIconPath": "static/tab/tab5_1.png",
+				"text": "开发者中心"
+			}
+		]
+	}
+}
