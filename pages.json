@@ -8,7 +8,7 @@
 			// 	"navigationBarTitleText": "uni-app",//单独设置导航栏的文字
 			// },
 			"style": {
-				"navigationBarTitleText": "导航栏带搜索框",
+				"navigationBarTitleText": "飞龙资源 ",
 				"app-plus": {
 					"titleNView": {
 						// "type": "transparent",//透明
@@ -50,19 +50,20 @@
 			"path": "pages/tabbar/tabbar-3/tabbar-3",
 			"style": {
 				// "titleNView":false//不显示导航栏
-				"app-plus": {"titleNView":
-							{"buttons": [{
-											"text":"添加","fontSize":"16px","width":"50px","color":"#007AFF"
-										}]
-							}
-						}
+				"navigationBarTitleText": "全县好消息"
 			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-4/tabbar-4",
 			"style": {
 				// "titleNView":false//不显示导航栏
-				"navigationBarTitleText": "互帮互助"
+				"navigationBarTitleText": "互帮互助",
+				"app-plus": {"titleNView":
+							{"buttons": [{
+											"text":"求助","fontSize":"16px","width":"50px","color":"#007AFF"
+										}]
+							}
+						}
 			}
 		},
 		{
@@ -189,6 +190,18 @@
 				"navigationBarTitleText": "个人中心"//单独设置导航栏的文字
 			}
         }
+        ,{
+            "path" : "pages/tabbar/tabbar-4/release",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-4/detail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-4/accept",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -208,10 +221,10 @@
 				"text": "首页"
 			},
 			{
-				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
-				"iconPath": "static/tab/tab2_0.png",
-				"selectedIconPath": "static/tab/tab2_1.png",
-				"text": "朋友圈"
+				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
+				"iconPath": "static/tab/tab3_0.png",
+				"selectedIconPath": "static/tab/tab3_1.png",
+				"text": "互帮互助"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
@@ -221,10 +234,10 @@
 				"text": "好消息"
 			},
 			{
-				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
-				"iconPath": "static/tab/tab3_0.png",
-				"selectedIconPath": "static/tab/tab3_1.png",
-				"text": "互帮互助"
+				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
+				"iconPath": "static/tab/tab2_0.png",
+				"selectedIconPath": "static/tab/tab2_1.png",
+				"text": "朋友圈"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",

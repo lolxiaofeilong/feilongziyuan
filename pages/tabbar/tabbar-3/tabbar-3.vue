@@ -1,13 +1,17 @@
 <template>
 	<view class="content">
-		<view class="box" v-if="item.show==1" v-for="(item,idx) in data" :key="idx" :style="{background:item.background ,color:item.color}"
-			@click="seeDetail(item.link)"
+		<view class="box" v-if="item.isShow==1" v-for="(item,idx) in data" :key="idx" :style="{background:item.background ,color:item.color}"
+			
 		>
-			<view class="item_icon">
+			<view class="item_icon" @click="delNews(item.id)">
 				<!-- <image src="../../../static/News.png" mode="widthFix"></image> -->
 				<image src="../../../static/notice.svg" mode="widthFix"></image>
 			</view>
-			<view class="animate" :style="{'animation-duration' :item.speed+'s'}">{{item.news}}</view>
+			<view class="animate" :style="{'animation-duration' :item.speed+'s'}" @click="seeDetail(item.link)">{{item.news}} </view>
+		</view>
+		<!-- 浮标 -->
+		<view class="" v-if="this.admin">
+			<uni-fab ref="fab" :pattern="pattern"  :horizontal="horizontal" :vertical="vertical" direction=""  @fabClick="fabClick" />
 		</view>
 	</view>
 </template>
@@ -17,22 +21,28 @@
 		data() {
 			return {
 				data:[],
-				time:10
+				time:10,
+				title: 'uni-fab',
+				directionStr: '垂直',
+				horizontal: 'right',
+				vertical: 'bottom',
+				direction: 'horizontal',
+				pattern: {
+					color: '#7A7E83',
+					backgroundColor: '#fff',
+					selectedColor: '#007AFF',
+					buttonColor: '#007AFF'
+				},
+				admin:0
 			}
 		},
 		onLoad() {
 
 		},
-		// 点击导航栏的发布按钮
-		onNavigationBarButtonTap() {
-			console.log("点击了自定义按钮");
-			uni.navigateTo({
-				url: './add'
-			});
-		},
 		onShow: function() {
 			var me = this;
 			this.getAllData();
+			this.adminShow();
 			uni.onNetworkStatusChange(function(res) {
 				console.log(res.networkType);
 				var str = ""
@@ -41,6 +51,7 @@
 				}else{
 					str = res.networkType +"已连接";
 					me.getAllData();
+					this.adminShow();
 				}
 				uni.showToast({
 					title: str,
@@ -50,6 +61,44 @@
 			});
 		},
 		methods: {
+			delNews(id){
+				console.log(1111111,id)
+				if(this.admin){
+					var me = this;
+					uni.request({
+						 url:"http://139.155.90.219:3000/NotShowGoodNews"+ `?id=${id}`,
+						 data:{},
+						 header:{},
+						 success(response) {
+						 },
+						 fail: (e) => {
+							 uni.showToast({
+							    title: '服务器异常，请稍后重试',
+							    duration: 2000,
+								icon:"none"
+							});
+						 },
+						 complete: () => {
+							me.getAllData()
+							
+						 }
+					})
+				}
+				
+			},
+			fabClick() {
+				uni.navigateTo({
+					url: './add'
+				});
+			},
+			adminShow(){
+				this.whoUse = uni.getStorageSync('whoUse');
+				if(this.whoUse){
+					this.admin = 1
+				}else{
+					this.admin = 0
+				}
+			},
 			 // 查询好消息
 			getAllData() {
 				var me = this;
@@ -92,6 +141,7 @@
 		},
 		mounted() {
 			// this.getAllData();
+			
 		}
 	}
 </script>
@@ -135,5 +185,10 @@
 			transform: translateX(-100%);
 			-webkit-transform: translateX(-100%);
 		}
+	}
+	.del123{
+		flex:1;
+		background-color: red;
+		z-index: 10;
 	}
 </style>

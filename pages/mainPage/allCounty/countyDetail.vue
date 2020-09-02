@@ -14,7 +14,7 @@
 		<view class="right">
 			<view class="item" v-for="(item,idx) in dataDetail" :key="idx" @click="seeStore(item)">
 				<view class="item_img">
-					<image :src="item.img" mode=""></image>
+					<image :src="item.img" ></image>
 				</view>
 				<view class="item_txt">
 					<view style="color:red;text-align: center;">{{item.placeName}}</view>
@@ -121,7 +121,9 @@
 					 data:{},
 					 header:{},
 					 success(response) {
-						me.dataDetail = response.data
+						 
+						me.dataDetail = response.data;
+						console.log("shuju",response.data)
 					 },
 					 fail: (e) => {
 						 uni.showToast({

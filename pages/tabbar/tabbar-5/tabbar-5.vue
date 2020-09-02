@@ -15,19 +15,16 @@
 		                <view style="line-height: 30px;">
 		                    <view>开发者：胡飞龙</view>
 		                    <view>
-		                        微信号：{{weixin}}
+		                        微信号：{{weixin}} 
 		                    </view>
 		                    <view>
 		                        联系电话：
 								<text style="color:#0000FF;" @click="phoneCall(phone)">{{phone}}</text>
-		                    </view>
+		                    </view> 
 		                    <view>联系地址：云阳县盘石镇派出所附件</view>
-		                    <view>备注：本软件是我个人开发的，有事可以通过上面的方式联系我</view>
-		                    <view>说明：由于我自己一直都使用的安卓手机，所以我只能看到安卓手机的情况，
-		                        但是我知道还有很多使用苹果手机的朋友，
-		                        但是我没有苹果的测试手机，
-		                        我正在处理苹果的软件,
-		                        <span style="color:red;"> 如果你家里有旧的手机不用了，如果方便的话送给我吧，谢谢！</span>
+		                    <!-- <view>备注：本软件是我个人开发的，有事可以通过上面的方式联系我</view> -->
+		                    <view>说明：
+		                        <span style="color:red;">跪求上次几台测试手机</span>， 如果你家里有旧的手机不用了，如果方便的话送给我吧，谢谢！
 		                    </view>
 		                </view>
 		                <view style="color:green; font-size: 20px;">各位家乡的朋友们，你们好！</view>
@@ -60,8 +57,6 @@
 		                    <view v-if="suppertorData.length==0" style="text-align: center;line-height: 200px;">暂无数据</view>
 		                </view>
 		            </view>
-		            
-		            
 		        </view>
 	</view>
 </template>

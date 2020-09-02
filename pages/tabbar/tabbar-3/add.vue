@@ -42,7 +42,7 @@
 															&background=${this.background}
 															&link=${this.link}
 															&speed=${this.speed}
-															&show=${this.show}
+															&isShow=${this.show}
 															`,
 				 data:{},
 				 header:{},

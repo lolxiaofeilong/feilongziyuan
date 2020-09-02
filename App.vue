@@ -29,6 +29,19 @@ export default {
 								}
 							}
 						})
+					}else{
+						// 提醒用户更新
+						uni.showModal({ 
+							title: '更新提示',
+							// content: '当前版本：'+plus.runtime.version+'最新版本:'+res.data[0].lastVersion+",<---"+res.data[0].content+'--->是否选择更新',
+							content: res.data[0].content,
+							success: (showResult) => {
+								if (showResult.confirm) {
+									plus.runtime.openURL(res.data[0].ios);
+									// plus.runtime.openURL("http://139.155.90.219:1000"); 
+								}
+							}
+						})
 					}
 		        }
 		    }

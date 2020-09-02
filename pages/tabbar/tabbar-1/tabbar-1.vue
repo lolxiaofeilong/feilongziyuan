@@ -6,7 +6,7 @@
 					<swiper-item v-if="item.show==1" v-for="(item, index) in SwiperImg" :key="index">
 						<view class="swiper-item uni-bg-red">
 							<image class="tupian" :src="item.img" @click="gotolink(item.link)"></image>
-						</view>
+						</view> 
 					</swiper-item>
 				</swiper>
 			</view>
@@ -425,7 +425,11 @@
 					fail: (e) => {
  
 					},
-					complete: () => {}
+					complete: () => {
+						setTimeout(() => {
+						uni.hideLoading();
+						}, 300);
+					}
 				})
 			},
 			gotolink(link){
@@ -467,7 +471,8 @@
 			this.addrecord();
 			// 获取所有模块
 			this.getModule();
-
+			
+			
 
 		}
 	}

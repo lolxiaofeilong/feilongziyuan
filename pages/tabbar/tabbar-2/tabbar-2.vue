@@ -229,7 +229,7 @@
 							uni.navigateTo({
 								url: "../../tab2/release"
 							});
-						}
+						} 
 						
 					// }
 				}else{
