@@ -113,9 +113,9 @@
 		 */
 		onNavigationBarSearchInputClicked(e) {
 			console.log('事件执行了')
-			// uni.navigateTo({
-			// 	url: '/pages/template/nav-search-input/detail/detail'
-			// });
+			uni.navigateTo({
+				url: '../../mainPage/allCounty/search'
+			});
 		},
 		/**
 		 *  点击导航栏 buttons 时触发

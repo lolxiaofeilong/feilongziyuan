@@ -17,15 +17,16 @@
 						"buttons": [{
 							"fontSrc": "/static/uni.ttf",
 							"text": "\ue100",
-							"width": "30px",
-							"fontSize": "30px",
+							"width": "40px",
+							"fontSize": "40px",
 							"color": "#ccc",
-							"background": "#ccc"
+							"background": "#ccc",
+							"textAlign": "center"
 						}],
 						"searchInput": {
 							"backgroundColor": "#eee",
 							"borderRadius": "6px",
-							"placeholder": "点击搜索",
+							"placeholder": "点击搜索你想找的资源",
 							"disabled": true
 						}
 					}
@@ -81,7 +82,14 @@
         }
         ,{
             "path" : "pages/mainPage/allCounty/countyDetail",
-            "style" : {}
+            "style" : {
+				"app-plus": {"titleNView":
+							{"buttons": [{
+											"text":"搜索","fontSize":"16px","width":"50px","color":"#007AFF"
+										}]
+							}
+						}
+			}
         }
         ,{
             "path" : "pages/mainPage/allCounty/storeDetail",
@@ -202,6 +210,50 @@
             "path" : "pages/tabbar/tabbar-4/accept",
             "style" : {}
         }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/panshi",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/news",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/motorbike",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/allCounty/modify",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mainPage/allCounty/search",
+            "style": {
+            	"navigationBarTitleText": "导航栏带搜索框",
+            	"app-plus": {
+            		"titleNView": {
+            			// "type": "transparent",
+            			"titleColor": "#fff",
+            			"backgroundColor": "#007AFF",
+            			// "buttons": [{
+            			// 	"fontSrc": "/static/uni.ttf",
+            			// 	"text": "搜索",
+            			// 	"width": "50px",
+            			// 	"fontSize": "20px",
+            			// 	"color": "#fff",
+            			// 	"background": "rgba(0,0,0,0)"
+            			// }],
+            			"searchInput": {
+            				"backgroundColor": "#fff",
+            				"borderRadius": "6px",
+            				"placeholder": "请输入你想要找的资源"
+            				// "disabled": true
+            			}
+            		}
+            	}
+            }
+        }
+        
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

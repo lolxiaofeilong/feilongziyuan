@@ -9,7 +9,7 @@
 			<view class="snail_list_box_three">
 				<view class="snail_list_box_three_left">
 					<view class="snail_list_box_three_left_up">过期时间：{{item.deadTime}}</view>
-					<view class="snail_list_box_three_left_down">联系人：你大爷</view>
+					<view class="snail_list_box_three_left_down">联系人：{{item.ReleaseName}}</view>
 				</view>
 				<view class="snail_list_box_three_right">
 					<view class='snail_list_box_three_right_text snail_list_box_three_right_text_color1' v-if="item.Status==1">待审核</view>

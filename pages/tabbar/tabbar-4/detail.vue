@@ -23,7 +23,7 @@
 		 
 		<view class="" v-if="isfabuperson">
 			<!-- 待接单  -->
-			<view class="bottom" v-if="data.Status==2">
+			<view class="bottom" v-if="isDie()">
 				<view class="left">
 					<view class="up">任务奖励</view>
 					<view class="down">{{data.OrderAmount}}</view>
@@ -47,7 +47,7 @@
 				<view class="right1">已验收</view>
 			</view>
 			<!-- 已接单 -->
-			<view class="bottom" v-if="data.Status==5">
+			<view class="bottom" v-if="isDie1()">
 				<view class="left">
 					<view class="up">任务奖励</view>
 					<view class="down">{{data.OrderAmount}}</view>
@@ -55,9 +55,11 @@
 				<view class="right1">已过期</view>
 			</view>
 		</view>
+		
+		
 		<view class="" v-else>
 			<!-- 待接单  -->
-			<view class="bottom" v-if="data.Status==2">
+			<view class="bottom" v-if="isDie()">
 				<view class="left">
 					<view class="up">任务奖励</view>
 					<view class="down">{{data.OrderAmount}}</view>
@@ -81,7 +83,7 @@
 				<view class="right1">已验收</view>
 			</view>
 			<!-- 已接单 -->
-			<view class="bottom" v-if="data.Status==5">
+			<view class="bottom" v-if="isDie1()">
 				<view class="left">
 					<view class="up">任务奖励</view>
 					<view class="down">{{data.OrderAmount}}</view>
@@ -100,8 +102,8 @@
 			return {
 				data:{},
 				id:1,
-				acceptPerson:"123",
-				acceptPhone:"123",
+				acceptPerson:"",
+				acceptPhone:"",
 				isfabuperson:false,
 				isjiedanperson:false
 				
@@ -116,10 +118,57 @@
 			this.getAllData()
 		},
 		methods: {
+			
+			// 待接单
+			isDie(){
+				var item = this.data
+				console.log(11111,item);
+				var timeNow = Date.now();
+				var timeDie = Date.parse(item.deadTime);
+				if(item.Status==2 && timeNow<timeDie){
+					return true;
+				}else {
+					return false;
+				}
+			},
+			// 已过期
+			isDie1(){
+				var item = this.data
+				console.log(11111,item);
+				var timeNow = Date.now();
+				var timeDie = Date.parse(item.deadTime);
+				if(item.Status==2 && timeNow>timeDie){
+					return true;
+				}else{
+					return false;
+				}
+			},
 			accept(){
-				uni.navigateTo({
-					url:"./accept?id="+this.id
-				})
+					this.username = uni.getStorageSync('username');
+					this.password = uni.getStorageSync('password');
+					if(this.username&&this.password){
+						uni.navigateTo({
+							url:"./accept?id="+this.id
+						})
+					}else{
+						uni.showModal({
+						    title: '提示',
+						    content: '发布任务需要登陆，是否立即去登陆',
+						    success: function (res) {
+						        if (res.confirm) {
+						            console.log('用户点击确定');
+									// uni.switchTab({
+									//     url: '../tabbar-1/login'
+									// });
+									uni.navigateTo({
+										url: '../tabbar-1/login'
+									});
+						        } else if (res.cancel) {
+						            console.log('用户点击取消');
+						        }
+						    }
+						});
+					}
 			},
 			judgeFaburen(){
 				var loginName = uni.getStorageSync('username');

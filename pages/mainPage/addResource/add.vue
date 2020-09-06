@@ -23,6 +23,7 @@
 				<input type="text" v-model="address" placeholder="地址" />
 				<input type="text" v-model="discrible" placeholder="描述" />
 				<input type="text" v-model="classic1" placeholder="分类" />
+				<input type="text" v-model="searchLabel" placeholder="搜索标签" />
 				<input type="text" v-model="jianjie" placeholder="图片介绍" />
 				<view class="release_title"  >添加图片</view>
 				
@@ -62,6 +63,7 @@
 				classic1: "",
 				jianjie: "", //每张图片的简介
 				imgs: "",
+				searchLabel:"",
 				video: null,
 				imgArr:[],
 				fuwuqiImgData:[]
@@ -148,7 +150,7 @@
 					imgStr = this.fuwuqiImgData.join(";")
 				}
 				uni.request({
-				 url:"http://139.155.90.219:3000/addStore1"+`?city=${this.city1}&img=${this.img}&placeName=${this.placeName}&name=${this.name}&phone=${this.phone}&address=${this.address}&discrible=${this.discrible}&classic=${this.classic1}&imgs=${imgStr}&video=${this.video}`,
+				 url:"http://139.155.90.219:3000/addStore1"+`?city=${this.city1}&img=${this.img}&placeName=${this.placeName}&name=${this.name}&phone=${this.phone}&address=${this.address}&discrible=${this.discrible}&classic=${this.classic1}&imgs=${imgStr}&video=${this.video}&searchLabel=${this.searchLabel}`,
 				 data:{},
 				 header:{},
 				 success(response) {

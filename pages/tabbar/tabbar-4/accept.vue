@@ -20,8 +20,8 @@
 		data() {
 			return {
 				id:1,
-				acceptPerson:"123",
-				acceptPhone:"123"
+				acceptPerson:"",
+				acceptPhone:""
 			}
 		},
 		onLoad(options) {

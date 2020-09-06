@@ -12,7 +12,8 @@
 			
 		</view>
 		<view class="right">
-			<view class="item" v-for="(item,idx) in dataDetail" :key="idx" @click="seeStore(item)">
+			<view class="item" style="position: relative;" v-for="(item,idx) in dataDetail" :key="idx" @click="seeStore(item)">
+			<view class="right_del" @click.stop="delStore(item.id)" v-if="admin">删除</view>
 				<view class="item_img">
 					<image :src="item.img" ></image>
 				</view>
@@ -46,28 +47,77 @@
 					// 	id: 14
 					// }
 				],
-				dataDetail:[]
+				dataDetail:[],
+				admin:0
 			}
+		},
+		// 点击导航栏的发布按钮
+		onNavigationBarButtonTap() {
+			console.log("点击了自定义按钮");
+			uni.navigateTo({
+				url: "./search"
+			});
 		},
 		onShow() {
 			var me = this;
-			uni.onNetworkStatusChange(function(res) {
-				console.log(res.networkType);
-				var str = ""
-				if(res.networkType=="none"){
-					str = "无网络连接";
-				}else{
-					str = res.networkType +"已连接";
-					me.getDataByCity(); 
-				}
-				uni.showToast({
-					title: str,
-					duration: 2000,
-					icon: "none"
-				});
-			});
+			// uni.onNetworkStatusChange(function(res) {
+			// 	console.log(res.networkType);
+			// 	var str = ""
+			// 	if(res.networkType=="none"){
+			// 		str = "无网络连接";
+			// 	}else{
+			// 		str = res.networkType +"已连接";
+			// 		me.getDataByCity(); 
+			// 	}
+			// 	uni.showToast({
+			// 		title: str,
+			// 		duration: 2000,
+			// 		icon: "none"
+			// 	});
+			// });
+			this.adminShow();
 		},
 		methods: {
+			adminShow(){
+				this.whoUse = uni.getStorageSync('whoUse');
+				if(this.whoUse){
+					this.admin = 1
+				}else{
+					this.admin = 0
+				}
+			},
+			delStore(id){
+				console.log(id);
+				var me = this;
+				uni.showLoading({
+				    title: '加载中...',
+					mask:true
+				});
+				uni.request({
+					 url:"http://139.155.90.219:3000/delStore" + `?id=${id}`,
+					 data:{},
+					 header:{},
+					 success(response) {
+						uni.showToast({
+						    title: '删除成功',
+						    duration: 2000,
+							icon:"none"
+						});
+					 },
+					 fail: (e) => {
+						uni.showToast({
+						    title: '服务器异常，请稍后重试',
+						    duration: 2000,
+							icon:"none"
+						});
+					 },
+					 complete: () => {
+						 setTimeout(() => {
+							uni.hideLoading();
+						}, 300);
+					 }
+				})
+			},
 			getHeight(){
 				 // 计算屏幕剩余高度  填补剩余高度
 				 let _this = this;
@@ -187,6 +237,13 @@
 		/* padding-left: 10px; */
 		overflow-y: scroll;
 		background-color: #ccc;
+		position: relative;
+	}
+	.right_del{
+		color:pink;
+		position: absolute;
+		right:0;
+		top:0;
 	}
 	.right .item{
 	    height: 180rpx;
