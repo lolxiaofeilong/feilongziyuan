@@ -25,15 +25,15 @@
 			</view>
 			<view class="tab50827_box">
 				<view class="tab50827_box_left">
-					<view class="">10</view>
+					<view class="">0</view>
 					<view class="">关注</view>
 				</view>
 				<view class="tab50827_box_center">
-					<view class="">20</view>
+					<view class="">0</view>
 					<view class="">发布</view>
 				</view>
 				<view class="tab50827_box_right">
-					<view class="">100</view>
+					<view class="">0</view>
 					<view class="">收藏</view>
 				</view>
 			</view>
@@ -114,6 +114,9 @@
 				<view class="havename" @click="goRegister">
 					<uni-icons type="arrowthinright" ></uni-icons>立即注册
 				</view>
+				<view class="havename" @click="goLookFor">
+					<uni-icons type="arrowthinright" ></uni-icons>忘记密码
+				</view>
 				<button type="primary" @click="login">登陆</button>
 			</view>
 		</view>
@@ -141,6 +144,12 @@
 
 		},
 		methods: {
+			// 找回密码
+			goLookFor(){
+				uni.navigateTo({
+					url:"./forget"
+				})
+			},
 			goLogin:function(){
 				console.log("去登陆")
 				if(!this.isLogin){
@@ -289,7 +298,24 @@
 							
 							// 用户权限
 							uni.setStorageSync("whoUse", response.data[0].whoUse);
-							me.checkLogin()
+							me.checkLogin();
+							// 查看是否设置密保问题，如果没有设置就给出提示去设置
+							if(!response.data[0].question){
+								uni.showModal({
+									title: '提示',
+									content: '去设置密保问题，方便找回密码',
+									success: function(res) {
+										if (res.confirm) {
+											console.log('用户点击确定');
+											uni.navigateTo({
+												url: './setQuestion?username='+me.reg_name
+											});
+										} else if (res.cancel) {
+											console.log('用户点击取消');
+										}
+									}
+								});
+							}
 						} else {
 							uni.showToast({
 							    title: '账号或者密码不对',
@@ -483,5 +509,6 @@
 	.havename{
 		height:50px;
 		line-height: 50px;
+		color:blue;
 	}
 </style>

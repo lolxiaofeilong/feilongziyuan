@@ -149,6 +149,10 @@
 					}
 					imgStr = this.fuwuqiImgData.join(";")
 				}
+				uni.showLoading({
+				    title: '加载中...',
+					mask:true
+				});
 				uni.request({
 				 url:"http://139.155.90.219:3000/addStore1"+`?city=${this.city1}&img=${this.img}&placeName=${this.placeName}&name=${this.name}&phone=${this.phone}&address=${this.address}&discrible=${this.discrible}&classic=${this.classic1}&imgs=${imgStr}&video=${this.video}&searchLabel=${this.searchLabel}`,
 				 data:{},

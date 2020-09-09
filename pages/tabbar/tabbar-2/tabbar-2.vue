@@ -114,7 +114,7 @@
 								response.data[i].img = JSON.parse(response.data[i].img);
 							}
 						}
-						me.data = me.data.concat(response.data.reverse()) 
+						me.data = me.data.concat(response.data) 
 						console.log(1111111111,me.data);
 						me.page++;
 					},

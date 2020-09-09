@@ -216,7 +216,15 @@
         }
         ,{
             "path" : "pages/tabbar/tabbar-1/news",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "盘龙公告",//单独设置导航栏的文字
+				"app-plus": {"titleNView":
+							{"buttons": [{
+											"text":"发布","fontSize":"16px","width":"50px","color":"#007AFF"
+										}]
+							}
+						}
+			}
         }
         ,{
             "path" : "pages/tabbar/tabbar-1/motorbike",
@@ -254,6 +262,18 @@
             }
         }
         
+        ,{
+            "path" : "pages/tabbar/tabbar-1/forget",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/setQuestion",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-1/addNews",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

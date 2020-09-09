@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="right">
-			<view class="item" style="position: relative;" v-for="(item,idx) in dataDetail" :key="idx" @click="seeStore(item)">
+			<view class="item" style="position: relative;" v-for="(item,idx) in dataDetail" v-if="item.isShow==1" :key="idx" @click="seeStore(item)">
 			<view class="right_del" @click.stop="delStore(item.id)" v-if="admin">删除</view>
 				<view class="item_img">
 					<image :src="item.img" ></image>

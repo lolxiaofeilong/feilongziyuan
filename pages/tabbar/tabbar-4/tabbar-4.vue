@@ -132,7 +132,7 @@
 								response.data[i].img = JSON.parse(response.data[i].img);
 							}
 						}
-						me.dataList = response.data.reverse().concat(me.dataList) 
+						me.dataList = me.dataList.concat(response.data) 
 						me.page++;
 					},
 					fail: (e) => {

@@ -24,7 +24,7 @@
 		                    <view>联系地址：云阳县盘石镇派出所附件</view>
 		                    <!-- <view>备注：本软件是我个人开发的，有事可以通过上面的方式联系我</view> -->
 		                    <view>说明：
-		                        <span style="color:red;">跪求上次几台测试手机</span>， 如果你家里有旧的手机不用了，就送给我吧，谢谢！
+		                        <span style="color:red;">跪求几台旧手机给我当测试手机</span>， 如果你家里有旧的手机不用了，就送给我吧，谢谢！
 		                    </view>
 		                </view>
 		                <view style="color:green; font-size: 20px;">各位家乡的朋友们，你们好！</view>
