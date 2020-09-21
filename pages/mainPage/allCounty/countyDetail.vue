@@ -55,7 +55,7 @@
 		onNavigationBarButtonTap() {
 			console.log("点击了自定义按钮");
 			uni.navigateTo({
-				url: "./search"
+				url: "./search?city="+this.city
 			});
 		},
 		onShow() {

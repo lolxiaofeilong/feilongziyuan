@@ -15919,16 +15919,21 @@ var render = function() {
             {
               key: item,
               staticClass: _vm._$g("2-" + $30, "sc"),
-              staticStyle: { width: "50%" },
+              staticStyle: { width: "50%", height: "200px" },
               attrs: { "scroll-y": "true", _i: "2-" + $30 }
             },
             [
               _c("v-uni-image", {
+                staticStyle: { width: "100%", height: "100%" },
                 attrs: {
                   src: _vm._$g("3-" + $30, "a-src"),
-                  mode: "aspectFill",
                   "lazy-load": true,
                   _i: "3-" + $30
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.$handleViewEvent($event)
+                  }
                 }
               })
             ],

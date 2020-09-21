@@ -28,11 +28,15 @@
 				]
 			}
 		},
+		onLoad(options) {
+			this.place = options.name;
+			console.log(this.place)
+		},
 		methods: {
 			onclick(link){
 				console.log(link);
 				uni.navigateTo({
-					url: link+"?city=盘龙街道"
+					url: link+"?city="+this.place
 				});
 			},
 			getList(){

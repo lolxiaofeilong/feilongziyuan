@@ -37,11 +37,14 @@
 			}
 			this.timer=setTimeout(()=>this.getNews(),500)
 		},
+		onLoad(options) {
+			this.city = options.city;
+		},
 		// 点击导航栏的发布按钮
 		onNavigationBarButtonTap() {
 			console.log("点击了自定义按钮");
 			uni.navigateTo({
-				url: "./addNews"
+				url: "./addNews?city="+this.city
 			});
 		},
 		methods: {
@@ -53,7 +56,7 @@
 				var me = this;
 				uni.request({
 					// url: "http://139.155.90.219:3000/getNews",
-					url: "http://139.155.90.219:3000/getNews" + `?page=${this.page}&limit=${this.limit}`,
+					url: "http://139.155.90.219:3000/getNews" + `?page=${this.page}&limit=${this.limit}&city=${this.city}`,
 					data: {},
 					header: {},
 					success(response) {

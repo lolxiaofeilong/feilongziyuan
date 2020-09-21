@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="right">
-			<view class="item" style="position: relative;" v-for="(item,idx) in dataDetail" v-if="item.isShow==1" :key="idx" @click="seeStore(item)">
+			<view class="item" style="position: relative;" v-for="(item,idx) in dataDetail" v-if="judgeCity(item)" :key="idx" @click="seeStore(item)">
 			<view class="right_del" @click.stop="delStore(item.id)" v-if="admin">删除</view>
 				<view class="item_img">
 					<image :src="item.img" ></image>
@@ -26,6 +26,9 @@
 				admin:0
 			}
 		},
+		onLoad(options) {
+			this.city = options.city
+		},
 		onNavigationBarSearchInputChanged(e) {
 			let text = e.text;
 			console.log("text",text);
@@ -36,6 +39,23 @@
 			}
 		},
 		methods: {
+			judgeCity(item){
+				if(item.isShow==1){
+					// 如果传入了城市的话就搜索当前城市的数据，否者就搜索全县的数据
+					if(this.city){
+						if(item.city==this.city){
+							return true;
+						}else{
+							return false;
+						}
+					}else{
+						return true;
+					}
+					
+				}else{
+					return false;
+				}
+			},
 			seeStore(item){
 				console.log("11111111",item);
 				// 默认打开内部模块，如果传过来了地址就跳转网页，可以专门给他们设置网页(给钱的可以单独给他写网页)

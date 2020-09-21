@@ -23,6 +23,9 @@
 				img:"",
 			}
 		},
+		onLoad(options) {
+			this.city = options.city
+		},
 		methods: {
 			imgView(idx){
 				var arr = [];
@@ -77,7 +80,7 @@
 					mask:true
 				});
 				uni.request({
-				 url:"http://139.155.90.219:3000/addNews"+`?img=${this.img}`,
+				 url:"http://139.155.90.219:3000/addNews"+`?img=${this.img}&city=${this.city}`,
 				 data:{},
 				 header:{},
 				 success(response) {

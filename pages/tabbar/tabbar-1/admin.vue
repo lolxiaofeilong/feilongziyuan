@@ -1,9 +1,16 @@
 <template>
 	<view>
-		<view v-for="(item,index) in user" :key="index">
-			<button type="default">{{item.account}}-{{item.nickName}}-{{item.password}}</button>
-			
+		<view class="table" style="color:red;">
+			<view class="left">账号</view>
+			<view class="center">用户名</view>
+			<view class="right">密码</view>
 		</view>
+		<view class="table" v-for="(item,index) in user" :key="index">
+			<view class="left">{{item.account}}</view>
+			<view class="center">{{item.nickName}}</view>
+			<view class="right">{{item.password}}</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -55,5 +62,21 @@
 <style scoped>
 	button{
 		font-size: 10px;
+	}
+	.table{
+		display: flex;
+		flex-direction: row;
+		height: 30px;
+		border-bottom: 1px solid #eee;
+		line-height: 30px;
+	}
+	.left{
+		flex:1;
+	}
+	.center{
+		flex:1;
+	}
+	.right{
+		flex:1;
 	}
 </style>

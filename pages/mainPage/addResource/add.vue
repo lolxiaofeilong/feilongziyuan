@@ -10,7 +10,7 @@
 		</view>
 		<view class="main">
 			<view v-if="tabChange==0">
-				<input type="text" v-model="city" placeholder="云阳县" />
+				<input type="text" v-model="city" placeholder="盘龙街道" />
 				<input type="text" v-model="classic" placeholder="分类" />
 				<button type="primary" @click="addClassic">添加分类</button>
 			</view>
@@ -50,7 +50,7 @@
 		data() {
 			return {
 				tabChange: 0,
-				city: "云阳县",
+				city: "盘龙街道",
 				classic: "",
 				// 录入店铺的数据
 				city1: "盘龙街道",

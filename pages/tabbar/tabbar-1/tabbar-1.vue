@@ -11,14 +11,14 @@
 				</swiper>
 			</view>
 			<view class="main">
-				<view class="main_item" v-for="(item,idx) in ziyuanData" :key="idx" @click="seeDetail(item.page)" v-if="showAdmin(item)">
+				<view class="main_item" v-for="(item,idx) in ziyuanData" :key="idx" @click="seeDetail(item)" v-if="showAdmin(item)">
 					<view class="main_item_img">
 						<image :src="item.src" mode=""></image>
 					</view>
 					<view class="main_item_txt">{{item.name}}</view>
 				</view>
 				
-				<view  v-if="showAdd" class="main_item" v-for="(item,idx) in addResource" :key="idx" @click="seeDetail(item.page)">
+				<view  v-if="showAdd" class="main_item" v-for="(item,idx) in addResource" :key="idx" @click="seeDetail(item)">
 					<view class="main_item_img">
 						<image :src="item.src" mode=""></image>
 					</view>
@@ -266,17 +266,17 @@
 					}
 				})
 			},
-			seeDetail(page) {
+			seeDetail(item) {
 				console.log(1111111111)
-				if(page.indexOf("http")!=-1){
+				if(item.page.indexOf("http")!=-1){
 					// 打开网页
 					uni.navigateTo({
-						url: '../tabbar-3/webView?url='+page
+						url: '../tabbar-3/webView?url='+item.page
 					});
 				}else{
 					// 跳转模块
 					uni.navigateTo({
-						url: page
+						url: item.page+"?name="+item.name
 					});
 				}
 			},
