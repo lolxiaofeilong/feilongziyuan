@@ -285,7 +285,7 @@
 		"borderStyle": "black",
 		"backgroundColor": "#fff",
 		"color": "#8F8F94",
-		"selectedColor": "#1296db",
+		"selectedColor": "#6aee29",
 		"list": [{
 				"pagePath": "pages/tabbar/tabbar-1/tabbar-1",
 				"iconPath": "static/tab/tab1_0.png",
@@ -294,28 +294,28 @@
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
-				"iconPath": "static/tab/tab3_0.png",
-				"selectedIconPath": "static/tab/tab3_1.png",
+				"iconPath": "static/tab/tab2_0.png",
+				"selectedIconPath": "static/tab/tab2_1.png",
 				"text": "互帮互助"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
 				
-				"iconPath": "static/tab/tab4_0.png",
-				"selectedIconPath": "static/tab/tab4_1.png",
+				"iconPath": "static/tab/tab3_0.png",
+				"selectedIconPath": "static/tab/tab3_1.png",
 				"text": "好消息"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
-				"iconPath": "static/tab/tab2_0.png",
-				"selectedIconPath": "static/tab/tab2_1.png",
+				"iconPath": "static/tab/tab4_0.png",
+				"selectedIconPath": "static/tab/tab4_1.png",
 				"text": "朋友圈"
 			},
 			{
 				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
 				"iconPath": "static/tab/tab5_0.png",
 				"selectedIconPath": "static/tab/tab5_1.png",
-				"text": "开发者中心"
+				"text": "我的"
 			}
 		]
 	}

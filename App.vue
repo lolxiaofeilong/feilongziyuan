@@ -13,10 +13,11 @@ export default {
 		    success: (res) => {
 				console.log(11111111111111,plus.runtime.appid);
 				console.log(1111111111111,plus.runtime.version);
+				console.log(1111111111111,plus.os.name);
 				// console.log(res);
 		        if (res.statusCode == 200 &&  plus.runtime.version != res.data[0].lastVersion) {
 		            // let openUrl = plus.os.name === 'iOS' ? res.data.iOS : res.data.Android;
-					if(plus.os.name !== 'iOS'){
+					if(plus.os.name == 'Android'){
 						// 提醒用户更新
 						uni.showModal({ 
 							title: '更新提示',

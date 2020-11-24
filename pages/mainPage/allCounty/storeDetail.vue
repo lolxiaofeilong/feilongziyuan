@@ -19,8 +19,14 @@
 						<!-- <video :src="item1.video" controls object-fit="cover"></video> -->
 						<video :src="item1.video" controls object-fit="cover"></video>
 		            </view>
-					<view style="display: flex;flex-wrap: wrap;">
+					<view v-if="data.dataImg.length>1" style="display: flex;flex-wrap: wrap;">
 						<scroll-view scroll-y="true" style="width:50%;" class="content" v-for="(item,idx) in data.dataImg" :key="idx">
+						    <!-- <view>{{item.text}}</view> -->
+						    <image  :src="item.img" @click="yulanImg(idx)"  mode="widthFix"	lazy-load></image>
+						</scroll-view>
+					</view>
+					<view v-else style="display: flex;flex-wrap: wrap;">
+						<scroll-view scroll-y="true"  class="content" v-for="(item,idx) in data.dataImg" :key="idx">
 						    <!-- <view>{{item.text}}</view> -->
 						    <image  :src="item.img" @click="yulanImg(idx)"  mode="widthFix"	lazy-load></image>
 						</scroll-view>

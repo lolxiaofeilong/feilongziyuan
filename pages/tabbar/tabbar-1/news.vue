@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view style="display: flex;flex-wrap: wrap;">
-			<scroll-view scroll-y="true" style="width:50%; height: 200px;"  class="content" v-for="(item,idx) in data" :key="idx">
+			<scroll-view  style="width:50%; height: 200px;"  class="content" v-for="(item,idx) in data" :key="idx">
 				<image  :src="item.img"   style="width:100%;height:100%;" @click="yulanImg(idx)" 	lazy-load></image>
 			</scroll-view>
 		</view>

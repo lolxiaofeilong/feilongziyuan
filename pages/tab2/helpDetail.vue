@@ -1,7 +1,9 @@
 <template>
 	<view>
 		<view class="main">
-			<view class="content" style="font-size: 30px;color:red; text-align: center;">{{data.title}}</view>
+			<view class="content" style="font-size: 30px;color:red; text-align: center; position: relative;">{{data.title}}
+				<view v-if="faburen" class="close-view" @click.stop="close()">删除</view>
+			</view>
 			<view class="title">发布日期： </view>
 			<view class="content" style="">{{data.releaseTime}}</view>
 			<view v-if='!!data.name'>
@@ -25,13 +27,13 @@
 			<view class="" >
 				评论：(<text style="color:red;">{{pinglunData.length}}条 </text>)
 			</view>
-			<view class="pinglun" v-for="(item,idx) in pinglunData" :key="idx">
+			<view class="pinglun" v-for="(item1,idx1) in pinglunData" :key="'info2-'+idx1">
 				
 				<view class="pinglun_1">
-					<text style="background:#ccc;">{{item.userName}}:</text> ----{{item.time}}
+					<text style="background:#ccc;">{{item1.userName}}:</text> ----{{item1.time}}
 				</view>
 				<view class="pinglun_2">
-					{{item.content}}
+					{{item1.content}}
 				</view>
 				<!-- <view class="pinglun_3">
 					{{item.time}}
@@ -55,10 +57,46 @@
 			return {
 				data: [],
 				pinglun:"",
-				pinglunData:[]
+				pinglunData:[],
+				faburen:false
 			}
 		},
 		methods: {
+			close(){
+				var me = this;
+				console.log(this.data)
+				uni.showLoading({
+					title: '正在删除...',
+					mask:true
+				});
+				uni.request({
+				 url:"http://139.155.90.219:3000/delMoments"+`?id=${this.data.id}`,
+				 data:{},
+				 header:{},
+				 success(response) {
+						uni.showToast({
+						    title: '删除成功',
+						    duration: 2000,
+							icon:"none"
+						});
+				 },
+				 fail: (e) => {
+					 console.log(111)
+					uni.showToast({
+						    title: '服务器异常，请稍后重试',
+						    duration: 2000,
+							icon:"none"
+						});
+				 },
+				 complete: () => {
+					
+					setTimeout(() => {
+							uni.hideLoading();
+							uni.navigateBack()
+						}, 300);
+				 }
+				})
+			},
 			// 打电话
 			phoneCall(num){
 				uni.makePhoneCall({
@@ -185,7 +223,14 @@
 				var str = year + "年" + month + "月" + day + "日 " + hour +":"+fen+":" +miao;
 				return str
 			},
+			judgeFaBuRen(){
+				var username = uni.getStorageSync('username');
+				if(this.data.username==username){
+					this.faburen = true;
+				}
+			},
 		},
+		
 		mounted() {
 			var query = uni.getStorageSync('help');
 			var vars = query.split("&");
@@ -201,11 +246,12 @@
 			console.log(this.data);
 			// 获取评论
 			this.getPL();
+			this.judgeFaBuRen();
 		}
 	}
 </script>
 
-<style>
+<style scoped>
 	.main{
 	    padding:0 20px;
 	    margin-top:0;
@@ -252,5 +298,11 @@
 	.pinglun_3{
 		text-align: right;
 		font-size: 6px;
+	}
+	.close-view {
+		line-height: 100px;
+		position: absolute;
+		top: 0upx;
+		right: -8upx;
 	}
 </style>

@@ -119,44 +119,87 @@
 				    title: '加载中...',
 					mask:true
 				});
+				
 				uni.request({
-				 url:"http://139.155.90.219:3000/addHelps_new"+`?OrderTitle=${this.OrderTitle}&
-																OrderAmount=${this.OrderAmount}&
-																OrderContent=${this.OrderContent}&
-																Status=${this.Status}&
-																ReleaseName=${this.ReleaseName}&
-																deadTime=${this.deadTime}&
-																username=${username}&
-																phone=${this.phone}
-																`,
-				 data:{},
-				 header:{},
-				 success(response) {
+					 url:"http://139.155.90.219:3000/addHelps_new1",
+					 data:{
+						OrderTitle:this.OrderTitle,
+						OrderAmount:this.OrderAmount,
+						OrderContent:this.OrderContent,
+						Status:this.Status,
+						ReleaseName:this.ReleaseName,
+						deadTime:this.deadTime,
+						username:username,
+						phone:this.phone
+					 },
+					 method: 'POST',
+					 header:{
+						 'Content-Type': 'application/x-www-form-urlencoded' 
+						 // 'Content-Type': 'application/json' 
+					 },
+					 success(response) {
+							uni.showToast({
+								title: '发布成功',
+								duration: 2000,
+								icon:"none"
+							});
+							setTimeout(function(){
+								uni.navigateBack();
+							},500)
+					 },
+					 fail: (e) => {
+						 console.log(111)
 						uni.showToast({
-						    title: '发布成功',
-						    duration: 2000,
-							icon:"none"
-						});
-						setTimeout(function(){
-							uni.navigateBack();
-						},500)
-				 },
-				 fail: (e) => {
-					 console.log(111)
-					uni.showToast({
-						    title: '服务器异常，请稍后重试',
-						    duration: 2000,
-							icon:"none"
-						});
-				 },
-				 complete: () => {
-					
-					setTimeout(() => {
-							uni.hideLoading();
-						}, 300);
-						
-				 }
+								title: '服务器异常，请稍后重试',
+								duration: 2000,
+								icon:"none"
+							});
+					 },
+					 complete: () => {
+						setTimeout(() => {
+								uni.hideLoading();
+							}, 300);
+					 }
 				})
+				// 原来的get请求
+				// uni.request({
+				//  url:"http://139.155.90.219:3000/addHelps_new"+`?OrderTitle=${this.OrderTitle}&
+				// 												OrderAmount=${this.OrderAmount}&
+				// 												OrderContent=${this.OrderContent}&
+				// 												Status=${this.Status}&
+				// 												ReleaseName=${this.ReleaseName}&
+				// 												deadTime=${this.deadTime}&
+				// 												username=${username}&
+				// 												phone=${this.phone}
+				// 												`,
+				//  data:{},
+				//  header:{},
+				//  success(response) {
+				// 		uni.showToast({
+				// 		    title: '发布成功',
+				// 		    duration: 2000,
+				// 			icon:"none"
+				// 		});
+				// 		setTimeout(function(){
+				// 			uni.navigateBack();
+				// 		},500)
+				//  },
+				//  fail: (e) => {
+				// 	 console.log(111)
+				// 	uni.showToast({
+				// 		    title: '服务器异常，请稍后重试',
+				// 		    duration: 2000,
+				// 			icon:"none"
+				// 		});
+				//  },
+				//  complete: () => {
+					
+				// 	setTimeout(() => {
+				// 			uni.hideLoading();
+				// 		}, 300);
+						
+				//  }
+				// })
 			},
 		}
 	}

@@ -25,14 +25,13 @@
 					<view class="main_item_txt">{{item.name}}</view>
 				</view>
 			</view>
-			<view class="addSchedule">
-				<!-- <view class="addSchedule_left">我的计划</view> -->
+			<!-- <view class="addSchedule">
 				<view class="addSchedule_left"></view>
 				<view class="addSchedule_right" @click="addSchedule">添加</view>
-			</view>
+			</view> -->
 		</view>
 
-		<view class="schedule" :style="{height:height+'px'}">
+		<!-- <view class="schedule" :style="{height:height+'px'}">
 			<view class="schedule_item" v-for="(item,idx) in data" :key="idx">
 				<view class="schedule_item_left">
 					<view class="schedule_item_left_1">{{item.title}}</view>
@@ -41,7 +40,7 @@
 				<view class="schedule_item_right">备注：{{item.remark}}</view>
 			</view>
 
-		</view>
+		</view> -->
 	</view>
 </template>
 <script>
@@ -177,7 +176,7 @@
 			// 获取所有模块
 			this.getModule();
 			// 获取剩余高度
-			this.getHeight();
+			// this.getHeight();
 		},
 		methods: {
 			// 获取banner
@@ -458,7 +457,7 @@
 				this.showAdd = true;
 			}
 			// 获取剩余高度
-			this.getHeight();
+			// this.getHeight();
 			// 获取轮播图
 			this.getBannerData();
 			// 获取地理位置
@@ -517,12 +516,13 @@
 
 	.main {
 		min-height: 150rpx;
-		max-height: 300rpx;
+		/* max-height: 1500rpx; */
 		overflow-y: scroll;
 		background-color: #fff;
 		display: flex;
 		flex-wrap: wrap;
-		margin: 20rpx 0;
+		/* margin: 20rpx 0; */
+		margin-top:20rpx;
 	}
 
 	.main_item {
