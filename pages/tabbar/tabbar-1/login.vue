@@ -23,7 +23,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="tab50827_box">
+			<!-- <view class="tab50827_box">
 				<view class="tab50827_box_left">
 					<view class="">0</view>
 					<view class="">关注</view>
@@ -36,63 +36,21 @@
 					<view class="">0</view>
 					<view class="">收藏</view>
 				</view>
-			</view>
+			</view> -->
 			<view class="tab50827_list">
-				<view class="tab50827_list_item">
+				<view class="tab50827_list_item" v-for="(item,idx) in list" :key="idx" @click="goList(item.url)">
 					<view class="tab50827_list_item_left">
-						<uni-icons type="star" size="20"></uni-icons>
+						<uni-icons :type="item.icon" size="20"></uni-icons>
 					</view>
 					<view class="tab50827_list_item_center">
-						我的收藏
+						{{item.name}}
 					</view>
 					<view class="tab50827_list_item_right">
 						<uni-icons type="arrowright" size="20"></uni-icons>
 					</view>
 				</view>
-				<view class="tab50827_list_item">
-					<view class="tab50827_list_item_left">
-						<uni-icons type="eye" size="20"></uni-icons>
-					</view>
-					<view class="tab50827_list_item_center">
-						我的关注
-					</view>
-					<view class="tab50827_list_item_right">
-						<uni-icons type="arrowright" size="20"></uni-icons>
-					</view>
-				</view>
-				<view class="tab50827_list_item">
-					<view class="tab50827_list_item_left">
-						<uni-icons type="heart" size="20"></uni-icons>
-					</view>
-					<view class="tab50827_list_item_center">
-						我的作品
-					</view>
-					<view class="tab50827_list_item_right">
-						<uni-icons type="arrowright" size="20"></uni-icons>
-					</view>
-				</view>
-				<view class="tab50827_list_item">
-					<view class="tab50827_list_item_left">
-						<uni-icons type="upload" size="20"></uni-icons>
-					</view>
-					<view class="tab50827_list_item_center">
-						发布
-					</view>
-					<view class="tab50827_list_item_right">
-						<uni-icons type="arrowright" size="20"></uni-icons>
-					</view>
-				</view>
-				<view class="tab50827_list_item">
-					<view class="tab50827_list_item_left">
-						<uni-icons type="gear" size="20"></uni-icons>
-					</view>
-					<view class="tab50827_list_item_center">
-						设置
-					</view>
-					<view class="tab50827_list_item_right">
-						<uni-icons type="arrowright" size="20"></uni-icons>
-					</view>
-				</view>
+				
+				
 				<button class="login_out" type="primary" @click="loginOut" v-if="isLogin">退出登陆</button>
 			</view>
 		</view>
@@ -138,6 +96,33 @@
 				registerTime:"",//注册时间
 				cancleMoments:"",
 				showWho:1, //1,个人中心，2显示注册，3显示登陆
+				list:[
+					{
+						name:"个人信息",
+						icon:"eye",
+						url:""
+					},
+					{
+						name:"我的作品",
+						icon:"heart",
+						url:""
+					},
+					{
+						name:"发布",
+						icon:"upload",
+						url:""
+					},
+					{
+						name:"设置",
+						icon:"gear",
+						url:""
+					},
+					{
+						name:"开发者中心",
+						icon:"star",
+						url:"../tabbar-5/tabbar-5"
+					},
+				]
 			}
 		},
 		onLoad() {
@@ -149,6 +134,20 @@
 				uni.navigateTo({
 					url:"./forget"
 				})
+			},
+			goList(url){
+				if(url){
+					uni.navigateTo({
+						url:url
+					})
+				}else{
+					uni.showToast({
+					    title: '正在开发中...',
+					    duration: 2000,
+						icon:"none"
+					});
+				}
+				
 			},
 			goLogin:function(){
 				console.log("去登陆")

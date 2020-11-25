@@ -1,17 +1,17 @@
 <template>
-	<view class="main">
-			<view class="release_title"> 标题：</view> 
+	<view class="main" style="padding:10px">
+			<!-- <view class="release_title"> 标题：</view> -->
 			<input type="text" v-model="title" placeholder="请输入标题" />
-			<view class="release_title"> 联系人：</view>
+			<!-- <view class="release_title"> 联系人：</view> -->
 			<input type="text" v-model="name" placeholder="请输入联系人姓名" />
-			<view class="release_title"> 联系电话：</view>
+			<!-- <view class="release_title"> 联系电话：</view> -->
 			<input type="text" v-model="phone" placeholder="请输入联系人电话" />
-			<view class="release_title"> 价格：</view>
+			<!-- <view class="release_title"> 价格：</view> -->
 			<input type="text" v-model="price" placeholder="请输入价格" />
-			<view class="release_title"> 具体内容：（<text style="color:red;">必填</text>）</view>
+			<!-- <view class="release_title"> 具体内容：（<text style="color:red;">必填</text>）</view> -->
 			<textarea v-model="content" placeholder="请输入详细内容" maxlength="-1" auto-height />
 	
-			<view class="release_title"  >添加图片</view> 
+			<!-- <view class="release_title"  >添加图片</view> -->
 			
 			<!-- <view class="" style="display: flex;flex-wrap: wrap; dimin-height:100px;max-height:200px;overflow-y: scroll;border:1px solid #ccc;margin-bottom: 10px;"  >
 				<view class="imgItem" style="width:25%;height: 100px;position: relative;padding-top: 20px;" v-for="(item ,idx) in imgArr" :key="idx">
@@ -396,12 +396,18 @@
 	    line-height: 50px;
 	}
 	input{
-		height: 30px;
-		border-bottom:1px solid #ccc;
+		height: 40px;
+		border:1px solid #ccc;
+		margin-bottom: 30px;
+		border-radius: 6px;
+		padding-left: 10px;
 	}
 	textarea{		
-		min-height: 50px;
-		border-bottom:1px solid #ccc;
-		width: 100%;
+		min-height: 100px;
+		border:1px solid #ccc;
+		width: 92%;
+		line-height: 40px;
+		border-radius: 6px;
+		padding-left: 10px;
 	}
 </style>

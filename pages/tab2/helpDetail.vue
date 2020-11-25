@@ -22,7 +22,7 @@
 			<view class="title">具体内容：</view>
 			<view class="content">{{data.content}}</view>
 			<!-- <scroll-view scroll-y="true" class="" v-for="(item ,idx) in data.img" :key="idx"> -->
-				<image :src="item" style="width:24%;height: 100px;border: 1px solid #ccc;border-radius: 10px;"v-for="(item ,idx) in data.img" :key="idx" @click="yulanImg(idx)"></image> 
+				<image :src="item" style="width:24%;height: 100px;border: 1px solid #ccc;"v-for="(item ,idx) in data.img" :key="idx" @click="yulanImg(idx)"></image> 
 			<!-- </scroll-view> -->
 			<view class="" >
 				评论：(<text style="color:red;">{{pinglunData.length}}条 </text>)

@@ -1,17 +1,17 @@
 <template>
-	<view class="box">
-		<view class="release_title"> 标题：</view>
+	<view class="box" style="padding:10px;">
+		<!-- <view class="release_title"> 标题：</view> -->
 		<input type="text" v-model="OrderTitle" placeholder="请输入标题" />
-		<view class="release_title"> 任务奖励：</view>
+		<!-- <view class="release_title"> 任务奖励：</view> -->
 		<input type="text" v-model="OrderAmount" placeholder="请输入任务奖励" />
-		<view class="release_title"> 联系人：</view>
+		<!-- <view class="release_title"> 联系人：</view> -->
 		<input type="text" v-model="ReleaseName" placeholder="请输入联系人" />
-		<view class="release_title"> 联系电话：</view>
+		<!-- <view class="release_title"> 联系电话：</view> -->
 		<input type="text" v-model="phone" placeholder="请输入联系电话" />
-		<view class="release_title"> 截止日期：</view>
+		<!-- <view class="release_title"> 截止日期：</view> -->
 		<view class="time" @click="open">{{deadTime}}</view>
 		<uni-calendar ref="calendar" :clear-date="true" :date="info.date" :insert="info.insert" :lunar="info.lunar" :startDate="info.startDate" :endDate="info.endDate" :range="info.range" @confirm="confirm" @close="close" />
-		<view class="release_title"> 具体内容：</view>
+		<!-- <view class="release_title"> 具体内容：</view> -->
 		<textarea v-model="OrderContent" placeholder="请输入具体内容" maxlength="-1" auto-height />
 		
 		<view class="btn">
@@ -234,16 +234,24 @@
 	    line-height: 50px;
 	}
 	input{
-		height: 30px;
-		border-bottom:1px solid #ccc;
+		height: 40px;
+		border:1px solid #ccc;
+		margin-bottom: 30px;
+		border-radius: 6px;
 	}
 	.time{
-		height: 30px;
-		border-bottom:1px solid #ccc;
+		height: 40px;
+		border:1px solid #ccc;
+		margin-bottom: 30px;
+		border-radius: 6px;
+		line-height: 40px;
+		color:#777;
 	}
 	textarea{		
-		min-height: 50px;
-		border-bottom:1px solid #ccc;
+		min-height: 100px;
+		border:1px solid #ccc;
 		width: 100%;
+		line-height: 40px;
+		border-radius: 6px;
 	}
 </style>

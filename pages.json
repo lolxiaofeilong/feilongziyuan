@@ -12,21 +12,23 @@
 				"app-plus": {
 					"titleNView": {
 						// "type": "transparent",//透明
-						"titleColor": "#fff",
+						"titleColor": "#000",
 						"backgroundColor": "#fff",
-						"buttons": [{
-							"fontSrc": "/static/uni.ttf",
-							"text": "\ue100",
-							"width": "40px",
-							"fontSize": "40px",
-							"color": "#ccc",
-							"background": "#ccc",
-							"textAlign": "center"
-						}],
+						// "buttons": [{
+						// 	"fontSrc": "/static/uni.ttf",
+						// 	"text": "\ue100",
+						// 	"width": "40px",
+						// 	"fontSize": "40px",
+						// 	"color": "#ccc",
+						// 	"background": "#ccc",
+						// 	"textAlign": "center"
+						// }],
 						"searchInput": {
-							"backgroundColor": "#eee",
+							"backgroundColor": "#f2f2f2",
 							"borderRadius": "6px",
-							"placeholder": "点击搜索你想找的资源",
+							"placeholderColor":"#6aee29",
+							"fontSize":"20px",
+							"placeholder": "全县搜索资源",
 							"disabled": true
 						}
 					}
@@ -37,7 +39,7 @@
 			"path":"pages/tabbar/tabbar-2/tabbar-2",
 			"style": {
 				// "enablePullDownRefresh":true,//下来刷新
-				"navigationBarTitleText":"全国朋友圈",
+				"navigationBarTitleText":"全县朋友圈",
 				"app-plus": {"titleNView":
 							{"buttons": [{
 											"text":"发布","fontSize":"16px","width":"50px","color":"#007AFF"
@@ -61,7 +63,7 @@
 				"navigationBarTitleText": "互帮互助",
 				"app-plus": {"titleNView":
 							{"buttons": [{
-											"text":"求助","fontSize":"16px","width":"50px","color":"#007AFF"
+											"text":"发布","fontSize":"16px","width":"50px","color":"#007AFF"
 										}]
 							}
 						}
@@ -195,7 +197,8 @@
         ,{
             "path" : "pages/tabbar/tabbar-1/login",
             "style" : {
-				"navigationBarTitleText": "个人中心"//单独设置导航栏的文字
+				// "navigationBarTitleText": "个人中心",//单独设置导航栏的文字
+					"titleNView": false //不显示导航栏
 			}
         }
         ,{
@@ -312,7 +315,7 @@
 				"text": "朋友圈"
 			},
 			{
-				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
+				"pagePath": "pages/tabbar/tabbar-1/login",
 				"iconPath": "static/tab/tab5_0.png",
 				"selectedIconPath": "static/tab/tab5_1.png",
 				"text": "我的"
