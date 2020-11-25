@@ -12,8 +12,11 @@
 			</view>
 			<view class="main">
 				<view class="main_item" v-for="(item,idx) in ziyuanData" :key="idx" @click="seeDetail(item)" v-if="showAdmin(item)">
-					<view class="main_item_img">
-						<image :src="item.src" mode=""></image>
+					<view class="main_item_img" >
+						<view class="" style="width:50px;height:50px;border-radius: 50%;background-color: #007aff;margin:0 auto;line-height: 50px;color:#fff;">
+							{{item.name.slice(0,3)}}
+						</view>
+						<!-- <image :src="item.src" mode=""></image> -->
 					</view>
 					<view class="main_item_txt">{{item.name}}</view>
 				</view>
