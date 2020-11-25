@@ -51,7 +51,7 @@
 				}else{
 					str = res.networkType +"已连接";
 					me.getAllData();
-					this.adminShow();
+					me.adminShow();
 				}
 				uni.showToast({
 					title: str,
