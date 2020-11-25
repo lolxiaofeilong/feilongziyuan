@@ -35,7 +35,7 @@
 				}
 			}
 		},
-		{
+		{ 
 			"path":"pages/tabbar/tabbar-2/tabbar-2",
 			"style": {
 				// "enablePullDownRefresh":true,//下来刷新
