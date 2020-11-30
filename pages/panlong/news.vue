@@ -1,9 +1,18 @@
 <template>
 	<view>
 		<view style="display: flex;flex-wrap: wrap;">
-			<scroll-view  style="width:50%; height: 200px;"  class="content" v-for="(item,idx) in data" :key="idx">
+			<view class="img_box" v-for="(item,idx) in data" :key="idx">
+				<scroll-view  style="width:100%; height: 200px;"  class="content" >
+					<image  :src="item.img"   style="width:100%;height:100%;" @click="yulanImg(idx)" 	lazy-load></image>
+				</scroll-view>
+				<view class="text">
+					盘龙公告栏
+				</view>
+			</view>
+			
+			<!-- <scroll-view  style="width:40%; height: 200px;"  class="content" v-for="(item,idx) in data" :key="idx">
 				<image  :src="item.img"   style="width:100%;height:100%;" @click="yulanImg(idx)" 	lazy-load></image>
-			</scroll-view>
+			</scroll-view> -->
 		</view>
 		 <view class="loading">{{loadingTxt}}</view>
 	</view>
@@ -109,5 +118,13 @@
 	       text-align: center;
 	       color: #888;
 	       margin-top: 30rpx;
+	   }
+	   .img_box{
+		   width:46%;
+		   padding:0 2%;
+		   margin-bottom:20px;
+	   }
+	   .text{
+		   text-align: center;
 	   }
 </style>
