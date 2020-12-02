@@ -441,7 +441,7 @@
 		display: flex;
 		padding-left:50px;
 		padding-bottom: 40px;
-		padding-top:30px;
+		padding-top:60px;
 	}
 	.tab50827_login_left{
 		width:80px;

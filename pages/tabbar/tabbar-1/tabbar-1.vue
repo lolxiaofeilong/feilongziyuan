@@ -278,7 +278,7 @@
 				}else{
 					// 跳转模块
 					uni.navigateTo({
-						url: item.page+"?name="+item.name
+						url: item.page+"?name="+item.name + "&class="+item.name
 					});
 				}
 			},
@@ -531,7 +531,7 @@
 
 	.main_item {
 		width: 20%;
-		height: 150rpx;
+		min-height: 150rpx;
 		text-align: center;
 	}
 
@@ -540,11 +540,13 @@
 		/* height: 70%; */
 	}
 
-	.main_item_txt {}
+	.main_item_txt {
+		height: 40px;
+	}
 
 	.main_item_img image {
-		width: 100rpx;
-		height: 100rpx;
+		width: 80rpx;
+		height: 80rpx;
 		/* border-radius: 50%; */
 	}
 

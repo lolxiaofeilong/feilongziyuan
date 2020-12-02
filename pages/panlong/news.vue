@@ -47,8 +47,10 @@
 			this.timer=setTimeout(()=>this.getNews(),500)
 		},
 		onLoad(options) {
+			console.log("options",options)
 			// this.city = options.city;
 			this.city = "盘龙街道";
+			this.class= options.class;//分类，普通公告，政府公告，水，电，气
 		},
 		// 点击导航栏的发布按钮
 		onNavigationBarButtonTap() {
@@ -66,7 +68,7 @@
 				var me = this;
 				uni.request({
 					// url: "http://139.155.90.219:3000/getNews",
-					url: "http://139.155.90.219:3000/getNews" + `?page=${this.page}&limit=${this.limit}&city=${this.city}`,
+					url: "http://139.155.90.219:3000/getNews" + `?page=${this.page}&limit=${this.limit}&city=${this.city}&class=${this.class}`,
 					data: {},
 					header: {},
 					success(response) {
