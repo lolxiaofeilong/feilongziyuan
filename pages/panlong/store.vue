@@ -13,24 +13,13 @@
 		</view>
 		<view class="right">
 			<div class="right_content">
-				<view class="right_item" style="position: relative;">
+				<view class="right_item" style="position: relative;" v-for="(item,idx) in dataDetail" :key="idx">
 					<view class="right_item_img" >
-						<image src="http://139.155.90.219:1000/icon/1.png" mode=""></image>
+						<image :src="item.icon" mode=""></image>
 					</view>
-					<view class="right_item_txt">111111</view>
+					<view class="right_item_txt">{{item.name}}</view>
 				</view>
-				<view class="right_item" style="position: relative;">
-					<view class="right_item_img" >
-						<image src="http://139.155.90.219:1000/icon/1.png" mode=""></image>
-					</view>
-					<view class="right_item_txt">111111</view>
-				</view>
-				<view class="right_item" style="position: relative;">
-					<view class="right_item_img" >
-						<image src="http://139.155.90.219:1000/icon/1.png" mode=""></image>
-					</view>
-					<view class="right_item_txt">111111</view>
-				</view>
+				
 			</div>
 			
 			<!-- 无数据的时候就显示这个 -->
@@ -57,50 +46,24 @@
 						classic: "美食",
 						id: 14
 					},
-					{
-						city: "盘龙街道",
-						classic: "生活",
-						id: 14
-					},
-					{
-						city: "盘龙街道",
-						classic: "酒店住宿",
-						id: 14
-					},
-					{
-						city: "盘龙街道",
-						classic: "休闲娱乐",
-						id: 14
-					},
-					{
-						city: "盘龙街道",
-						classic: "汽车服务",
-						id: 14
-					},
-					{
-						city: "盘龙街道",
-						classic: "培训机构",
-						id: 14
-					},
 				],
 				dataDetail:[
-									{
-										address: "盘龙街道盘石镇派出所附近",
-										city: "盘龙街道",
-										classic: "古玩",
-										discrible: "",
-										id: 413,
-										img: "http://139.155.90.219/app/store/15994464898926043.jpg",
-										imgs: "http://139.155.90.219/app/store/15994464898926043.jpg,;http://139.155.90.219/app/store/160119188011982.jpg,",
-										isShow: "1",
-										link: null,
-										name: "胡飞龙",
-										phone: "17815015892",
-										placeName: "古床出售",
-										searchLabel: "古董，古玩，古床",
-										video: "null"
-									}
-								],
+					{	
+						classic:"美食",
+						name:"xxxx",
+						icon:"http://139.155.90.219:1000/icon/1.png",
+					},
+					{
+						classic:"照相馆",
+						name:"xxxx",
+						icon:"http://139.155.90.219:1000/icon/1.png",
+					},
+					{
+						classic:"休闲娱乐",
+						name:"xxxx",
+						icon:"http://139.155.90.219:1000/icon/1.png",
+					},
+				],
 				admin:0
 			}
 		},
@@ -184,6 +147,7 @@
 			},
 			changeActive(item,idx){
 				this.leftActive=idx;
+				this.getDataDetailbByClassic(item.classic);
 			},
 			// 根据乡镇查询分类
 			getDataByCity() {
@@ -199,7 +163,8 @@
 					 success(response) {
 						me.data = response.data;
 						var item =me.data[0]
-						me.getDataByCityAndClassic(item)
+						// me.getDataByCityAndClassic(item)
+						me.getDataDetailbByClassic(item.classic);
 					 },
 					 fail: (e) => {
 						uni.showToast({
@@ -215,7 +180,35 @@
 					 }
 				})
 			},
-			
+			getDataDetailbByClassic(classic){
+				console.log("每次请求接口的参数",classic);
+				var me = this;
+				uni.showLoading({
+				    title: '加载中...',
+					mask:true
+				});
+				uni.request({
+					 url:"http://139.155.90.219:3000/getDataDetailNew/" + classic,
+					 data:{},
+					 header:{},
+					 success(response) {
+						me.dataDetail=response.data;
+					 },
+					 fail: (e) => {
+						uni.showToast({
+						    title: '服务器异常，请稍后重试',
+						    duration: 2000,
+							icon:"none"
+						});
+					 },
+					 complete: () => {
+						 setTimeout(() => {
+							uni.hideLoading();
+						}, 300);
+					 }
+				})
+				
+			},
 			seeStore(item){
 				console.log("11111111",item);
 				// 默认打开内部模块，如果传过来了地址就跳转网页，可以专门给他们设置网页(给钱的可以单独给他写网页)

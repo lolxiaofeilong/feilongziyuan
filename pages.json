@@ -283,7 +283,7 @@
             "path" : "pages/panlong/store",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "盘龙资源",
                 "enablePullDownRefresh": false
             }
             
