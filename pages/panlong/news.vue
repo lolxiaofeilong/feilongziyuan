@@ -56,7 +56,7 @@
 		onNavigationBarButtonTap() {
 			console.log("点击了自定义按钮");
 			uni.navigateTo({
-				url: "./addNews?city="+this.city
+				url: "./addNews?city="+this.city+"&class="+this.class
 			});
 		},
 		methods: {

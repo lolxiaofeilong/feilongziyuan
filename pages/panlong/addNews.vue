@@ -47,7 +47,8 @@
 			})
 		},
 		onLoad(options) {
-			this.city = options.city
+			this.city = options.city;
+			this.class = options.class;
 		},
 		methods: {
 			close(e) {
@@ -100,7 +101,7 @@
                           	console.log(res);
 							me.img=res.data;
 							uni.request({
-							 url:"http://139.155.90.219:3000/addNews"+`?img=${me.img}&city=${me.city}`,
+							 url:"http://139.155.90.219:3000/addNews"+`?img=${me.img}&city=${me.city}&class=${me.class}`,
 							 data:{},
 							 header:{},
 							 success(response) {
