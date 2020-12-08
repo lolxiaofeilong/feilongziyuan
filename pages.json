@@ -310,6 +310,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/panlong/storeDeatil",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

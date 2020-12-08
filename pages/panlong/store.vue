@@ -13,7 +13,7 @@
 		</view>
 		<view class="right">
 			<div class="right_content">
-				<view class="right_item" style="position: relative;" v-for="(item,idx) in dataDetail" :key="idx">
+				<view class="right_item" style="position: relative;" v-for="(item,idx) in dataDetail" :key="idx" @click="seeStore(item)">
 					<view class="right_item_img" >
 						<image :src="item.icon" mode=""></image>
 					</view>
@@ -210,26 +210,10 @@
 				
 			},
 			seeStore(item){
-				console.log("11111111",item);
-				// 默认打开内部模块，如果传过来了地址就跳转网页，可以专门给他们设置网页(给钱的可以单独给他写网页)
-				if(item.link){
-					// 打开网页
-					uni.navigateTo({
-						url: '../../tabbar/tabbar-3/webView?url='+item.link
-					});
-				}else{
-					// 跳转模块
-					var str ="";
-					for(var key in item){
-						str += key+"="+item[key]+"&"
-					}
-					uni.setStorageSync("message", str.slice(0, -1))
-					uni.navigateTo({
-						url: "storeDetail"
-					});
-				}
-				
-				
+				uni.navigateTo({
+					url: "./storeDeatil?city=盘龙街道&classic="+item.name,
+				});
+				console.log("111111112222222222",item);
 			},
 		},
 		mounted() {
