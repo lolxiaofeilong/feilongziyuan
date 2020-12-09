@@ -65,27 +65,27 @@
 			
 			
 			// 数据操作
-			uni.request({
-				 url:"http://139.155.90.219:3000/getAllStore_2020",
-				 data:{},
-				 header:{},
-				 success(response) {
+			// uni.request({
+			// 	 url:"http://139.155.90.219:3000/getAllStore_2020",
+			// 	 data:{},
+			// 	 header:{},
+			// 	 success(response) {
 					 
-					console.log("所有店铺",response.data);
-					that.allStore = response.data
+			// 		console.log("所有店铺",response.data);
+			// 		that.allStore = response.data
 					
 					
 					
-				 },
-				 fail: (e) => {
-					 uni.showToast({
-					    title: '服务器异常，请稍后重试',
-					    duration: 2000,
-						icon:"none"
-					});
-				 },
-				 complete: () => {}
-			})
+			// 	 },
+			// 	 fail: (e) => {
+			// 		 uni.showToast({
+			// 		    title: '服务器异常，请稍后重试',
+			// 		    duration: 2000,
+			// 			icon:"none"
+			// 		});
+			// 	 },
+			// 	 complete: () => {}
+			// })
 			// var xxx = 0;
 			// setInterval(function() {
 			//           console.log(111111111,that.allStore)
