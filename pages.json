@@ -280,11 +280,16 @@
         }
         
         ,{
-            "path" : "pages/panlong/store",
+            "path" : "pages/panlong/classic",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "盘龙资源",
-                "enablePullDownRefresh": false
+                "app-plus": {"titleNView":
+                			{"buttons": [{
+                							"text":"搜索","fontSize":"14px","width":"50px","color":"#007AFF"
+                						}]
+                			}
+                		}
             }
             
         }
@@ -311,7 +316,72 @@
             
         }
         ,{
-            "path" : "pages/panlong/storeDeatil",
+            "path" : "pages/panlong/store",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "搜索列表",
+                "app-plus": {"titleNView":
+                			{"buttons": [{
+                							"text":"添加","fontSize":"14px","width":"50px","color":"#007AFF"
+                						}]
+                			}
+                		}
+            }
+            
+        }
+        ,{
+            "path" : "pages/panlong/storeDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详细信息",
+                "app-plus": {"titleNView":
+                			{"buttons": [{
+                							"text":"添加","fontSize":"14px","width":"50px","color":"#007AFF"
+                						}]
+                			}
+                }
+            }
+            
+        }
+        ,{
+            "path" : "pages/panlong/search",
+            "style": {
+            	"navigationBarTitleText": "导航栏带搜索框",
+            	"app-plus": {
+            		"titleNView": {
+            			// "type": "transparent",
+            			"titleColor": "#fff",
+            			"backgroundColor": "#007AFF",
+            			// "buttons": [{
+            			// 	"fontSrc": "/static/uni.ttf",
+            			// 	"text": "搜索",
+            			// 	"width": "50px",
+            			// 	"fontSize": "20px",
+            			// 	"color": "#fff",
+            			// 	"background": "rgba(0,0,0,0)"
+            			// }],
+            			"searchInput": {
+            				"backgroundColor": "#fff",
+            				"borderRadius": "6px",
+            				"placeholder": "请输入你想要找的资源"
+            				// "disabled": true
+            			}
+            		}
+            	}
+            }
+            
+        }
+        ,{
+            "path" : "pages/panlong/addStore",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/panlong/addStoreGoods",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
