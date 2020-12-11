@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="h1">
+			你有其他的吗？欢迎上传
+		</view>
 		<view style="display: flex;flex-wrap: wrap;">
 			<view class="img_box" v-for="(item,idx) in data" :key="idx">
 				<scroll-view  style="width:100%; height: 200px;"  class="content" >
@@ -128,5 +131,12 @@
 	   }
 	   .text{
 		   text-align: center;
+	   }
+	   .h1{
+		   height: 100px;
+		   font-size: 20px;
+		   text-align: center;
+		   line-height: 100px;
+		   color: pink;
 	   }
 </style>

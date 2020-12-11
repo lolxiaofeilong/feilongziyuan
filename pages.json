@@ -389,6 +389,19 @@
             }
             
         }
+        ,{
+            "path" : "pages/panlong/map",
+           "style" : {
+           	"navigationBarTitleText": "地图",//单独设置导航栏的文字
+           	"app-plus": {"titleNView":
+           				{"buttons": [{
+           								"text":"发布","fontSize":"16px","width":"50px","color":"#007AFF"
+           							}]
+           				}
+           			}
+           }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

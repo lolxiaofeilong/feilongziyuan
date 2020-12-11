@@ -6,13 +6,12 @@
 				<!-- <textarea v-model="img" placeholder="列表图片" maxlength="-1" auto-height /> -->
 				<input type="text" v-model="classic" placeholder="分类" />
 				<input type="text" v-model="placeName" placeholder="店铺名称" />
-				
-				
 				<input type="text" v-model="name" placeholder="店主姓名" />
 				<input type="text" v-model="phone" placeholder="联系电话" />
 				<input type="text" v-model="address" placeholder="地址" />
 				<input type="text" v-model="searchLabel" placeholder="搜索标签" />
 				<input type="text" v-model="jianjie" placeholder="图片介绍" />
+				
 				<view class="release_title"  >添加图片</view>
 				
 				<!-- <view class="" style="display: flex;flex-wrap: wrap; dimin-height:100px;max-height:200px;overflow-y: scroll;border:1px solid #ccc;margin-bottom: 10px;"  >
@@ -187,7 +186,7 @@
 									 fail: (e) => {
 										 console.log(111)
 										uni.showToast({
-											    title: '服务器异常，请稍后重试',
+											    title: '网络异常...',
 											    duration: 2000,
 												icon:"none"
 											});

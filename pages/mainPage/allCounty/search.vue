@@ -106,7 +106,7 @@
 					 },
 					 fail: (e) => {
 						uni.showToast({
-						    title: '服务器异常，请稍后重试',
+						    title: '网络异常...',
 						    duration: 2000,
 							icon:"none"
 						});
@@ -134,7 +134,7 @@
 					 },
 					 fail: (e) => {
 						uni.showToast({
-						    title: '服务器异常，请稍后重试',
+						    title: '网络异常...',
 						    duration: 2000,
 							icon:"none"
 						});
