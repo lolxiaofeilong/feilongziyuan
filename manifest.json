@@ -1,9 +1,9 @@
 {
-    "name" : "飞龙资源",
+    "name" : "盘龙资源",
     "appid" : "__UNI__021770C",
     "description" : "",
-    "versionName" : "1.0.1",
-    "versionCode" : 201,
+    "versionName" : "1.0.2",
+    "versionCode" : 202,
     "transformPx" : false,
     "app-plus" : {
         "nvueCompiler" : "uni-app",
@@ -85,9 +85,9 @@
             },
             "splashscreen" : {
                 "android" : {
-                    "hdpi" : "C:/Users/admin/Desktop/ios打包文件/app图标/飞龙资源480.png",
-                    "xhdpi" : "C:/Users/admin/Desktop/ios打包文件/app图标/飞龙资源720.png",
-                    "xxhdpi" : "C:/Users/admin/Desktop/ios打包文件/app图标/飞龙资源1080.png"
+                    "hdpi" : "C:/Users/lenovo/Desktop/app图标/启动图480.png",
+                    "xhdpi" : "C:/Users/lenovo/Desktop/app图标/启动图720.png",
+                    "xxhdpi" : "C:/Users/lenovo/Desktop/app图标/启动图1080.png"
                 },
                 "ios" : {
                     "iphone" : {

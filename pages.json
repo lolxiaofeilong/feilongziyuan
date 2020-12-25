@@ -1,6 +1,17 @@
 {
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// 启动页面，当做广告页面来弄就好了
+		{
+		    "path" : "pages/firstShow",
+		    "style" :                                                                                    
+		    {
+		        // "navigationBarTitleText": "",
+		        // "enablePullDownRefresh": false
+					"titleNView":false//不显示导航栏
+		    }
+		    
+		},
 		{
 			"path": "pages/tabbar/tabbar-1/tabbar-1",
 			// "style": {
